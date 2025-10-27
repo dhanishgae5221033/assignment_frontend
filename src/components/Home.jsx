@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "../App.css";
+
 
 const BASE = "https://assignment-backend-1-gbgg.onrender.com";
 

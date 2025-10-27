@@ -36,3 +36,165 @@
     transform: rotate(360deg);
   }
 }
+/* ================================
+   Global App Styling (Food Ordering)
+   ================================ */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background-color: #fff9f5;
+  color: #333;
+}
+
+h1, h2, h3 {
+  color: #d84315;
+  text-align: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+input, button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin: 4px;
+  font-size: 15px;
+}
+
+button {
+  background-color: #ff7043;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #e64a19;
+}
+
+/* --- Food Cards --- */
+.food-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  padding: 16px;
+  margin: 12px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.food-card strong {
+  font-size: 18px;
+  color: #bf360c;
+}
+
+.food-card input[type="number"] {
+  width: 60px;
+}
+
+/* --- Cart --- */
+.cart {
+  background: #fff3e0;
+  border: 1px solid #ffe0b2;
+  padding: 10px 16px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0;
+}
+
+.cart-item button {
+  background: #ef5350;
+}
+
+.cart-item button:hover {
+  background: #c62828;
+}
+
+/* --- Forms (Add/Update/Delete) --- */
+.form-container {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 450px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.form-container input {
+  display: block;
+  width: 90%;
+  margin: 10px auto;
+}
+
+/* --- Orders --- */
+.order-card {
+  background: #fff8e1;
+  border: 1px solid #ffe082;
+  border-radius: 8px;
+  padding: 14px;
+  margin: 10px 0;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+ul {
+  padding-left: 20px;
+}
+
+/* --- Footer --- */
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 13px;
+  color: #888;
+}
+/* =======================
+   NAVIGATION BAR DESIGN
+   ======================= */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ff7043;
+  padding: 12px 20px;
+  color: white;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .logo {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.navbar nav a {
+  text-decoration: none;
+  color: white;
+  background-color: #ff8a65;
+  padding: 8px 14px;
+  border-radius: 8px;
+  margin: 0 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.navbar nav a:hover {
+  background-color: #e64a19;
+  transform: translateY(-2px);
+}
+
+.navbar nav a.active {
+  background-color: #d84315;
+}

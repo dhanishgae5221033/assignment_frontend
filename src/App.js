@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Add from "./components/Add";
 import Update from "./components/Update";
 import Delete from "./components/Delete";
+import Order from "./components/Order";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path="/add" element={<Add/>} />
         <Route path="/update" element={<Update/>} />
         <Route path="/delete" element={<Delete/>} />
+        <Route path="/orders" element={<Order />} />
       </Routes>
     </>
   );
