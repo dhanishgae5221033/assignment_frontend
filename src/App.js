@@ -11,13 +11,14 @@ function App() {
  
   return (
     <>
-      <h1>Book Management</h1>
+      <h1>food ordering System</h1>
 
       <nav style={{"display":"flex","gap":"25px"}}>
         <Link to="/">Load</Link>
         <Link to="/add">Add</Link>
         <Link to="/update">Update</Link>
         <Link to="/delete">Delete</Link>
+        <Link to="/orders">Orders</Link>
       </nav>
 
       
