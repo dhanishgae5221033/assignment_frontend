@@ -1,64 +1,37 @@
-
-import React, { useState ,useEffect} from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
+const BASE = "https://assignment-backend-1-gbgg.onrender.com";
 
-function Update(){
- const [data, setData] = useState(null);
- const [msg, setMsg] = useState(null);
-
- const [book, setBook] = useState({
-    id: 0,
-    name: '',
-    qty: 0
-  });
+function Update() {
+  const [food, setFood] = useState({ id: "", itemName: "", price: "" });
+  const [msg, setMsg] = useState(null);
 
   const handlePut = async () => {
     try {
-      const resp = await axios.put(`https://assignment-backend-1-gbgg.onrender.com/books/${book.id}`, {
-        name: book.name
-      });
-      setMsg(resp.data.msg);
+      const id = Number(food.id);
+      const body = {};
+      if (food.itemName) body.itemName = food.itemName;
+      if (food.price) body.price = Number(food.price);
+      const resp = await axios.put(`${BASE}/foods/${id}`, body);
+      setMsg(resp.data.msg || "Updated");
+      setFood({ id: "", itemName: "", price: "" });
     } catch (e) {
-        setMsg(e.message);
-      console.log(e);
+      console.error(e);
+      setMsg(e.response?.data?.msg || e.message);
     }
   };
 
-
-
-    return <>
-    <h1>Update a book</h1>
-
-
-       <input
-        type="text"
-        value={book.id}
-        onChange={(e) => setBook({ ...book, id: e.target.value })}
-        placeholder="Book ID"
-      />
-      <input
-        type="text"
-        value={book.name}
-        onChange={(e) => setBook({ ...book, name: e.target.value })}
-        placeholder="Book Name"
-      />
-      <input
-        type="text"
-        value={book.qty}
-        onChange={(e) => setBook({ ...book, qty: e.target.value })}
-        placeholder="Quantity"
-      />
-
-    <button onClick={handlePut}>Update</button>
-
-
-
+  return (
+    <div>
+      <h1>Update Food Item</h1>
+      <input type="number" placeholder="ID" value={food.id} onChange={(e) => setFood({ ...food, id: e.target.value })} />
+      <input type="text" placeholder="New item name" value={food.itemName} onChange={(e) => setFood({ ...food, itemName: e.target.value })} />
+      <input type="number" placeholder="New price" value={food.price} onChange={(e) => setFood({ ...food, price: e.target.value })} />
+      <button onClick={handlePut}>Update</button>
       {msg && <p>{msg}</p>}
-        </>
-};
-
-
-
+    </div>
+  );
+}
 
 export default Update;
