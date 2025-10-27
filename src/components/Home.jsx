@@ -9,7 +9,7 @@ function Home(){
 
   const handleGet = async () => {
     try {
-      const resp = await axios.get("https://assignment-backend-s21i.onrender.com/books");
+      const resp = await axios.get("https://assignment-backend-1-gbgg.onrender.com/books");
       console.log(resp.data);
       setData(resp.data);
       setMsg(resp.data.msg);

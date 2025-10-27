@@ -15,7 +15,7 @@ function Add(){
 
     const handleDelete = async () => {
     try {
-      const resp = await axios.delete(`https://assignment-backend-s21i.onrender.com/books/${book.id}`);
+      const resp = await axios.delete(`https://assignment-backend-1-gbgg.onrender.com/books/${book.id}`);
       setMsg(resp.data.msg);
     } catch (e) {
          setMsg(e.message);

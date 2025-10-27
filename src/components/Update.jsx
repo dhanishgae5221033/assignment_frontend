@@ -15,7 +15,7 @@ function Update(){
 
   const handlePut = async () => {
     try {
-      const resp = await axios.put(`https://assignment-backend-s21i.onrender.com/books/${book.id}`, {
+      const resp = await axios.put(`https://assignment-backend-1-gbgg.onrender.com/books/${book.id}`, {
         name: book.name
       });
       setMsg(resp.data.msg);
